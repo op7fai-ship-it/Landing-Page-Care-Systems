@@ -884,17 +884,33 @@ h4 {
 
   .hero-right {
     flex: 0 0 auto;
-    max-width: 85%;
-    width: 85%;
-    min-height: 360px;
+    max-width: 90%;
+    width: 90%;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    margin-top: var(--spacing-md);
   }
 
-
+  .hero-doctor-img {
+    margin-bottom: 20px;
+  }
 
   .hero-trust-card {
-    position: static;
-    margin-top: var(--spacing-xl);
-    animation: fadeUpIn 0.55s ease-out 0.6s forwards;
+    position: relative;
+    /* Volta para o fluxo flex para não quebrar a tela */
+    bottom: auto;
+    left: auto;
+    right: auto;
+    transform: none;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    justify-content: center;
+    gap: var(--spacing-md);
+    padding: 16px 20px;
   }
 }
 
@@ -908,13 +924,12 @@ h4 {
     width: 100%;
   }
 
-
-
   .hero-trust-card {
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--spacing-sm);
-    padding: 12px 16px;
+    gap: 16px;
+    padding: 16px;
+    width: 100%;
   }
 }
 
@@ -1624,10 +1639,19 @@ h4 {
 }
 
 @media (max-width: 992px) {
-  .protocol-row {
+
+  .protocol-row,
+  .protocol-row--reverse {
     flex-direction: column !important;
+    /* Desfaz o reverse no mobile para manter consistência */
     gap: var(--spacing-xl);
     text-align: center;
+  }
+
+  .protocol-image {
+    width: 100%;
+    max-width: 440px;
+    margin: 0 auto;
   }
 
   .protocol-info {
@@ -1636,7 +1660,7 @@ h4 {
   }
 
   .protocol-rows {
-    gap: var(--spacing-3xl);
+    gap: 80px;
   }
 
   .product-title {
@@ -1650,6 +1674,26 @@ h4 {
   .product-benefits li::before {
     position: static;
     margin-right: 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .product-highlight {
+    height: 400px;
+    /* Dá um pouco mais de espaço vertical para a imagem caber */
+    max-width: 100%;
+  }
+
+  .product-highlight img {
+    width: 110% !important;
+    /* Reduz um pouquinho do zoom extremo para caber no container do mobile sem cortar topo/base */
+    max-width: 280px !important;
+    transform: translateY(20px);
+    /* Ajusta a âncora para mobile */
+  }
+
+  .protocol-row:hover .product-highlight img {
+    transform: translateY(18px);
   }
 }
 
