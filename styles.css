@@ -931,16 +931,19 @@ h4 {
 
   .hero-trust-card {
     flex-wrap: wrap;
-    /* Pode quebrar linha se a tela for hiper pequena, mas a altura será contida */
     justify-content: center;
-    gap: 12px 16px;
-    padding: 10px;
-    width: 96%;
+    gap: 12px 18px;
+    padding: 12px 20px;
+    width: fit-content;
+    /* Permite se ajustar dinamicamente ao conteúdo sem forçar 100% de largura */
+    max-width: 95%;
+    /* Evita que saia da tela */
+    border-radius: 12px;
   }
 
   .trust-card-item img {
-    max-height: 18px;
-    /* Logos menores p/ diminuir impacto vertical no celular */
+    max-height: 26px;
+    /* Aumenta as logos na versão mobile */
   }
 }
 
@@ -1093,7 +1096,8 @@ h4 {
 .solution-video-wrapper.phone-frame {
   position: relative;
   width: 100%;
-  max-width: 290px;
+  max-width: 330px;
+  /* Aumenta a tela inteira do celular em todas as resoluções */
   height: auto;
   /* Aspect ratio ditado pelo próprio vídeo */
   margin: 0 auto;
