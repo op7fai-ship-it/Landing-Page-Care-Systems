@@ -1678,7 +1678,8 @@ h4 {
   }
 
   .protocol-rows {
-    gap: 80px;
+    gap: 40px;
+    /* Reduz espaçamento entre os dois produtos no mobile */
   }
 
   .product-title {
